@@ -14,8 +14,9 @@ const stu_Re = (state = initailState,action) =>{
         case Add:
             return{
                 ...state,
-                students: ([...state.students, action.payload])
+                students: ([...state.students, action.payload])            
             }
+            // const ne_data = [action.payload]
             break;
         
         case Edit:

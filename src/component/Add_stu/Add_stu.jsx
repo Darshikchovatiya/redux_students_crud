@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
 import stu_1 from '../../../public/Student.jpg'
 import uuid from 'react-uuid'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Stude_ac } from '../../services/actions/student_ac'
-import { useLocation, useNavigate } from 'react-router'
+import { json, useLocation, useNavigate } from 'react-router'
 
 
 
@@ -13,7 +13,12 @@ function Add_stu() {
     const navigate = useNavigate();
     // const location = useLocation();
 
+
     const dispatch = useDispatch();
+
+
+    // let ne_data = useSelector(state => state.stu_Re.students);
+
 
 
     const [inputval, setInputval] = useState({
@@ -44,7 +49,11 @@ function Add_stu() {
 
         dispatch(Stude_ac(n_data));
 
+
         navigate('/');
+
+
+        // localStorage.setItem("stu_data", JSON.stringify(ne_data));
 
         setInputval({
             fname: '',
